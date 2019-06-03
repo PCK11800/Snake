@@ -19,6 +19,9 @@ public class Main{
     //Game running bool
     private boolean gameRunning = true;
 
+    //Game speed - higher the slower the game
+    private int gameSpeed = 75;
+
     //Snakehead
     private ImageIcon head = new ImageIcon("head.png");
     private JLabel snakehead = new JLabel(head);
@@ -31,7 +34,7 @@ public class Main{
     private ImageIcon app = new ImageIcon("apple.png");
     private JLabel apple = new JLabel(app);
 
-    //Snakehead directions
+    //Snakehead directions - starting towards left
     private int verticalDirection = 0; // -10 = upwards, 10 = downwards
     private int horizontalDirection = 10; // -10 = left, 10 = right
 
@@ -150,7 +153,7 @@ public class Main{
         
         while(gameRunning){
             try{
-                Thread.sleep(75);
+                Thread.sleep(gameSpeed);
 
                 //Shift previous location by one to the right on the array
                 /*
